@@ -1,110 +1,120 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <link rel="preload" href="Pan Studio VR 1.2-bundle.js?t=2024-01-25T19:32:26.320" as="script">
-    <title>Pan Studio VR 1.2</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="white">
-    <style>
-    html {
-        height: 100%;
-    }
-    body {
-        height: 100%;
-        margin: 0px;
-        background-image: linear-gradient(black, #2b2b2b);
-    }
-    .xr-button-container {
-      display: block;
-      position: fixed;
-      width: 100%;
-      bottom: 0px;
-      display: flex;
-      justify-content: center;
-      pointer-events: none;
-    }
-    #vr-button, #ar-button {
-      float: left;
-      width: 0px; /* Hidden until we know supported state */
-      padding-left: 10px;
-      padding-bottom: 25px;
-      display: block;
-      pointer-events: all;
-      cursor: pointer;
-    }
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TRISTANJOHN</title>
+<meta name="description" content="Tristan John Github Space">
+<meta name="keywords" content="Tristan, John, Tristan John, Film, Music and Interactive Media Production, Github Space">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+<link rel="stylesheet" href="main.css">
+   <style>
+  body {
+    margin: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #FFC07C;
+    color: #111111 ; 
+    font-family: 'Courier';
+  }
 
-    #canvas {
-      -webkit-touch-callout: none;
-      -webkit-user-select: none;
-      -khtml-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      touch-action: none;
-    }
+  .container {
+    position: relative;
+  }
 
-    /* Once supported state is known, show the button */
-    [data-supported] {
-      width: 100px !important;
-      transition: 0.5s;
-    }
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 80 auto;
+  }
 
-    /* If not supported, we dim out */
-    [data-supported='0'] {
-      opacity: 0.25;
-    }
+  .top-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
 
-    .xr-button-label {
-      fill: white;
-    }
+  .bottom-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgba(255, 200, 200, 0.35);
+  }
 
-    .xr-button-frame {
-      stroke: white;
-    }
-
-    #version {
-      text-align: right;
-      position: absolute;
-      right: 10px;
-      bottom: 10px;
-      color: white;
-      font-size: 18pt;
-      font-family: monospace;
-      /*display: none; */
-      z-index: 99999;
-    }
-
-    #version a {
-      transition: opacity 0.5s;
-      opacity: 0;
-    }
-
-    #version:hover a{
-      opacity: 1;
-    }
-
-    </style>
-    
-
-    <script type="module" src="Pan Studio VR 1.2-bundle.js?t=2024-01-25T19:32:26.320"></script>
-
-    
-    </script>
-    
-  </head>
-  <body>
-    <canvas id="canvas" style="width: 100%; height: 100%; display: block;" tabindex="0"></canvas>
-    <div id="version">
-        <a>Wonderland Engine 1.0.1</a>
+  .top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+        .social-icons {
+        position: absolute;
+        bottom: 5px;
+        right: 1px;
+        display: flex;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.65);
+        padding: 10px;
+      }
+      
+      .social-header {
+        font-size: 18px;
+        color: white;
+        text-align: right;
+        font-style: Bold;
+        margin-right: 10px;
+      }
+      
+      .social-icon {
+        margin-right: 10px;
+        color: white;
+        font-size: 18px;
+      }
+      
+    a:link { text-decoration: none;}
+	a:visited { text-decoration: none; }
+	a:hover { text-decoration: none; }
+	a:active { text-decoration: none; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <img src="TJOffice.png" alt="Centered Image">
+    <div class="top-left" id="slide">Creative Professional    <br> Digital Arts<br> <font color='red'> GitHub Space <font color='black'></div>
+    <div class="top-right"></div>
+    <div class="bottom-left">WebXR App Deploy<br><br>◎ <a href="https://shaepic.github.io/SDDeploy">Codename: Spectral Dawn </a>
+    <!-- <br><br>◎ <a href="https://tristanjohn.com/MARTN">MARTN EP:1</a> -->
+    <br><br>◎ <a href="https://shaepic.github.io/PSDeploy">PanStudioVR</a>
     </div>
-    <div class="xr-button-container">
-      <a id="vr-button">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 109.41 65"><rect class="xr-button-frame" x="3.5" y="3.5" width="102.41" height="58" rx="16.68" style="fill:none;stroke-linejoin:round;stroke-width:7px"/><path class="xr-button-label" d="M36.24,48.84a2,2,0,0,1-1.78-1.15L23.39,17.46a1.84,1.84,0,0,1,1.78-1.84h5.45a1.8,1.8,0,0,1,1.66,1.21l7.29,20.42,7.28-20.42a1.8,1.8,0,0,1,1.67-1.21H54a1.84,1.84,0,0,1,1.78,1.84L44.67,47.69a2,2,0,0,1-1.78,1.15Z"/><path class="xr-button-label" d="M70.61,40H68v7a1.84,1.84,0,0,1-1.78,1.84H61.31A1.83,1.83,0,0,1,59.54,47V17.46a1.83,1.83,0,0,1,1.77-1.84H73s13,.12,13,12.22c0,6-3.21,9-6.42,10.5L86.38,47a1.76,1.76,0,0,1-1.77,1.84h-5.8a1.91,1.91,0,0,1-1.43-.69ZM68,32.09h5c2.24,0,4.08-1.15,4.08-4.25s-1.84-4.36-4.08-4.36H68Z"/></svg>
-      </a>
-      <a id="ar-button">
-        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 109.41 65"><path class="xr-button-label" d="M42.89,15.62a2,2,0,0,1,1.78,1.15L55.75,47A1.84,1.84,0,0,1,54,48.84H48.52a1.81,1.81,0,0,1-1.67-1.2l-1.49-4.19H33.77l-1.49,4.19a1.8,1.8,0,0,1-1.66,1.2H25.17A1.83,1.83,0,0,1,23.39,47L34.46,16.77a2,2,0,0,1,1.78-1.15Zm-6.31,20h6l-3-8.38Z"/><path class="xr-button-label" d="M70.61,40H68V47a1.84,1.84,0,0,1-1.78,1.83H61.31A1.83,1.83,0,0,1,59.54,47V17.46a1.83,1.83,0,0,1,1.77-1.84H73s13,.12,13,12.22c0,6-3.21,9-6.42,10.5L86.38,47a1.76,1.76,0,0,1-1.77,1.83h-5.8a1.91,1.91,0,0,1-1.43-.69ZM68,32.09h5c2.24,0,4.08-1.15,4.08-4.25s-1.84-4.36-4.08-4.36H68Z"/><rect class="xr-button-frame" x="3.5" y="3.5" width="102.41" height="58" rx="16.68" style="fill:none;stroke-linejoin:round;stroke-width:7px"/></svg>
-      </a>
-    </div>
-  </body>
+  </div>
+  
+  <a href="#" class="lightbox" id="img1">
+  <span style="background-image: url('MARTN Landscape Poster 9.png')"></span></a>
+  <!--
+    <div class="social-icons">
+      <span class="social-header">Get In Touch:</span>
+      <a class="social-icon" href="mailto:mail@tristanjohn.com" target="_blank"><i class="fas fa-envelope"></i></a>
+      <a class="social-icon" href="https://www.linkedin.com/in/tristan-john-2b086159" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a class="social-icon" href="https://twitter.com/shaepicvr/" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a class="social-icon" href="discordapp.com/users/shaepic" target="_blank"><i class="fab fa-discord"></i></a>
+      <a class="social-icon" href="https://www.imdb.com/name/nm5693675/" target="_blank"><i class="fab fa-imdb"></i></a>
+      <a class="social-icon" href="https://music.apple.com/us/artist/tristan-john/1377837372" target="_blank"><i class="fab fa-apple"></i></a>
+      <a class="social-icon" href="https://facebook.com/TristanJohnMusic" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a class="social-icon" href="https://instagram.com/shaepicvr/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a class="social-icon" href="https://open.spotify.com/album/7I5lAtqx5pqgWDyg96j8Cg" target="_blank"><i class="fab fa-spotify"></i></a>
+      <a class="social-icon" href="https://www.youtube.com/channel/UChcLqfF72_LRg5Qp4Zf-BtQ" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div> -->
+</body>
 </html>
