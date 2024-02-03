@@ -15229,6 +15229,8 @@ var ENTURheadScript = class extends Component {
       this.object.setRotationLocal(this.Hpos);
       this.EyeOb.getComponent("mesh").material = this.Eyemat1;
       this.hp = 8;
+      this.cd = 1;
+      this.rcd = 1;
       this.mode = 0;
     }
   }
